@@ -89,7 +89,7 @@
   if (route && truck && stops.length) {
     route.classList.add("live");
     const mobile = () => matchMedia("(max-width: 900px)").matches;
-    const at = (i) => (mobile() ? { x: 0, y: stops[i].offsetTop + 16 - 20 } : { x: stops[i].offsetLeft + 8 - 20, y: 14 - 20 });
+    const at = (i) => (mobile() ? { x: 0, y: stops[i].offsetTop + 16 - 20 } : { x: stops[i].offsetLeft + (parseFloat(getComputedStyle(stops[i], "::before").left) || 0) + 8 - 20, y: 14 - 20 });
     const place = (p) => {
       const n = stops.length - 1, f = Math.min(1, Math.max(0, p)) * n, i = Math.min(n - 1, Math.floor(f)), t = f - i;
       const a = at(i), b = at(i + 1);

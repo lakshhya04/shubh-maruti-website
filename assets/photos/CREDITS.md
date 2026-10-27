@@ -37,4 +37,4 @@ Network, Sectors and How we work have no photos. Unused photos are in `_unused/`
 
 Sectors (stock stand-ins, one each, not used elsewhere): `sector-1.jpg` (seaport, Multinational companies), `sector-2.jpg` (container depot, Businesses across industries), `sector-3.jpg` (loading dock, Industrial areas). Replace with the company's own photos when available.
 
-Services, Delhi Airport cargo: `svc-airport.jpg`, "U.S. Air Force C-5 Galaxy" (U.S. Forest Service source via rawpixel), public domain (CC0), https://www.rawpixel.com/image/8728151/photo-image-airplane-public-domain-galaxy . A stand-in: a military cargo aircraft with its nose open. Replace with a real photo of cargo at Delhi Airport.
+Services, Delhi Airport cargo: `svc-airport.jpg` is now a tight crop of `airport-cargo.jpg` (the hero's ground-handling photo, rawpixel, CC0). The earlier U.S. Air Force C-5 image was removed (kept as `_unused/svc-airport-airforce.jpg`). Same source picture as hero slide 1, so replace it with a real photo of cargo at Delhi Airport when available.

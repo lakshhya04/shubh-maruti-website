@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
 <title>Shubh Maruti Logistics | Transport and logistics from New Delhi</title>
 <meta name="description" content="Road transport, Delhi Airport cargo, over-dimensional and project cargo, container rental and warehousing. A New Delhi logistics company since 2011." />
 <!-- Shubh Maruti Logistics one-page draft. Structure (full-screen photo hero, section order) was
@@ -274,7 +275,7 @@
   .sector:hover .dia { background: #fff; color: var(--blue); }
 
   /* ---------------- faq ---------------- */
-  .faq { display: grid; grid-template-columns: 50% 50%; padding: 90px 0 110px; border-top: 1px solid var(--line-l); }
+  .faq { display: grid; grid-template-columns: 25% 75%; padding: 90px 0 110px; border-top: 1px solid var(--line-l); }
   .faq .l { padding: 0 var(--pad); }
   .faq h2 { font-weight: 300; font-size: clamp(32px, 3.2vw, 44px); line-height: 1.15; color: var(--blue); margin: 26px 0 18px; }
   .faq .l p { max-width: 380px; }
@@ -319,6 +320,27 @@
   .fab.away { opacity: 0; pointer-events: none; transform: translateY(12px); }
   .fab { position: fixed; right: 16px; bottom: 16px; z-index: 30; display: none; align-items: center; gap: 8px; height: 50px; padding: 0 20px; border-radius: 4px; background: var(--red); color: #fff; font-size: 16px; font-weight: 500; box-shadow: 0 8px 24px rgb(0 0 0 / .25); }
 
+  /* the page grid, as on SCT: hairlines at the quarter points run behind every section, continuous top to bottom */
+  @media (min-width: 901px) {
+    .gl:not(.about):not(.hero)::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background: linear-gradient(90deg, transparent calc(25% - .5px), var(--gl, var(--line-l)) calc(25% - .5px) calc(25% + .5px), transparent calc(25% + .5px) calc(75% - .5px), var(--gl, var(--line-l)) calc(75% - .5px) calc(75% + .5px), transparent calc(75% + .5px)); }
+    .gl:not(.about):not(.hero) > * { position: relative; z-index: 1; }
+    .why, .contact { --gl: var(--line-d); }
+    .contact::before { display: none; }
+    .qs { background: #fff; }
+    /* network and process: content sits in columns that start on the grid lines (25%, 50%, 75%) */
+    .network::before, .process::before { background: linear-gradient(90deg, transparent calc(25% - .5px), var(--line-l) calc(25% - .5px) calc(25% + .5px), transparent calc(25% + .5px) calc(50% - .5px), var(--line-l) calc(50% - .5px) calc(50% + .5px), transparent calc(50% + .5px) calc(75% - .5px), var(--line-l) calc(75% - .5px) calc(75% + .5px), transparent calc(75% + .5px)) !important; }
+    .places { grid-template-columns: repeat(3, 1fr); gap: 0; padding: 0; }
+    .place { padding: 30px 32px 34px 40px; }
+    .place::before { left: 0; right: 0; }
+    .process { display: block; padding: 90px 0 120px; }
+    .process .l { width: 25%; padding: 0 var(--pad); margin: 0 0 40px; max-width: none; }
+    .process .l h2 { max-width: none; }
+    .process .l p { max-width: 300px; }
+    .steps { grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .steps li { padding: 52px 32px 0 40px; }
+    .steps li::before { left: 40px; }
+  }
   /* ---------------- small screens ---------------- */
   @media (max-width: 900px) {
     :root { --pad: 20px; }
@@ -469,7 +491,7 @@
   <div class="hero-box">
     <i class="hero-prog" id="heroProg" aria-hidden="true"></i>
     <div class="cap">
-      <p id="heroCap">Since 2011 we have moved cargo for multinationals and businesses across industries, from 0.5 kg airport parcels to over-dimensional and project cargo.</p>
+      <p id="heroCap">We move cargo by road for businesses across Delhi NCR, from airport parcels to heavy project loads.</p>
       <a class="more" id="heroMore" href="#services">See our services</a>
     </div>
     <div class="hero-nav" role="group" aria-label="Highlights">
@@ -630,8 +652,8 @@
          tab into it, or have reduced motion turned on. The arrows step through the highlights. ---- */
   const HERO = [
     ["Airport cargo", "Dependable Transport And", "Logistics From New Delhi", "Since 2011 we have moved cargo for multinationals and businesses across industries, from 0.5 kg airport parcels to over-dimensional and project cargo.", "See our services", "#services"],
-    ["Road transport", "Reliable Road Transport", "Across Delhi NCR|And Beyond", "Connecting industrial areas with Delhi Airport, container depots, a rail freight terminal and the ports of Mundra and Nhava Sheva.", "Ask about road transport", "enquiry"],
-    ["ODC and project cargo", "Cargo That Doesn't Fit", "The Standard Truck", "Over-dimensional and project cargo: heavy equipment, machinery and project materials, with specialised planning and handling before anything moves.", "See our network", "#network"],
+    ["Road transport", "Reliable Road Transport", "Across Delhi NCR|And Beyond", "Road transport linking industrial areas to the airport, container depots, rail terminal and ports.", "Ask about road transport", "enquiry"],
+    ["ODC and project cargo", "Cargo That Doesn't Fit", "The Standard Truck", "We plan and move oversized, heavy and project cargo that a standard truck can't carry.", "See our network", "#network"],
   ];
   const hero = document.getElementById("hero"), slides = [...hero.querySelectorAll(".slide")];
   const title = document.getElementById("heroTitle"), cap = document.getElementById("heroCap"), more = document.getElementById("heroMore");
@@ -733,7 +755,11 @@
     }, 220);
   };
   detail.style.transition = "opacity .3s"; sPh.style.transition = "opacity .4s";
-  SERVICES.forEach(([name], i) => { const li = document.createElement("li"); li.innerHTML = `<button>${name}</button>`; li.firstChild.type = "button"; li.firstChild.onclick = () => pick(i); list.appendChild(li); });
+  SERVICES.forEach(([name], i) => { const li = document.createElement("li"); li.innerHTML = `<button>${name}</button>`; li.firstChild.type = "button"; li.firstChild.onclick = () => pick(i);
+    // on a desktop pointer, resting on a service shows its photo and details; click and keyboard still work
+    let hv; li.firstChild.addEventListener("pointerenter", (e) => { if (e.pointerType !== "mouse" || phone.matches || cur === i) return; clearTimeout(hv); hv = setTimeout(() => pick(i), 60); });
+    li.firstChild.addEventListener("pointerleave", () => clearTimeout(hv));
+    list.appendChild(li); });
   pick(0);
 
   /* ---- network ---- */
