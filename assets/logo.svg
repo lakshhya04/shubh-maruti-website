@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086">
+  <defs>
+    <style>
+      .blue{fill:#0B2F7A;stroke:#0B2F7A}
+      .red{fill:#E61919}
+      .white{fill:#FFFFFF}
+      .outline{fill:none;stroke:#0B2F7A;stroke-width:18;stroke-linejoin:round}
+      .thin{fill:none;stroke:#0B2F7A;stroke-width:6}
+    </style>
+    <clipPath id="globeClip">
+      <circle cx="585" cy="655" r="145"/>
+    </clipPath>
+  </defs>
+
+  <!-- Container front and side -->
+  <polygon points="80,270 985,115 985,940 80,810" class="white"/>
+  <polygon points="985,115 1335,245 1335,820 985,940" class="blue"/>
+  <polygon points="80,270 985,115 1335,245 1335,820 985,940 80,810" class="outline"/>
+
+  <!-- Front panel inset -->
+  <polyline points="100,290 970,145 970,915 100,790 100,290" class="outline"/>
+
+  <!-- Right-side container slats -->
+  <polygon points="1040,160 1065,170 1065,900 1040,910" class="white"/>
+  <polygon points="1118,188 1143,197 1143,872 1118,881" class="white"/>
+  <polygon points="1198,218 1223,227 1223,845 1198,855" class="white"/>
+  <polygon points="1275,246 1300,255 1300,817 1275,827" class="white"/>
+
+  <!-- Hindi word -->
+  <text x="540" y="430" text-anchor="middle" class="red"
+        font-family="Noto Sans Devanagari, Mangal, Arial Unicode MS, sans-serif"
+        font-size="190" font-weight="800">शुभ</text>
+
+  <!-- M and L -->
+  <text x="120" y="790" class="blue"
+        font-family="Arial Black, Arial, sans-serif"
+        font-size="380" font-weight="900">M</text>
+  <text x="750" y="790" class="blue"
+        font-family="Arial Black, Arial, sans-serif"
+        font-size="380" font-weight="900">L</text>
+
+  <!-- Globe O -->
+  <circle cx="585" cy="655" r="150" class="white" stroke="#0B2F7A" stroke-width="14"/>
+
+  <!-- Globe grid -->
+  <g clip-path="url(#globeClip)" class="thin">
+    <ellipse cx="585" cy="655" rx="95" ry="145"/>
+    <ellipse cx="585" cy="655" rx="50" ry="145"/>
+    <ellipse cx="585" cy="655" rx="125" ry="145"/>
+    <line x1="440" y1="610" x2="730" y2="610"/>
+    <line x1="440" y1="655" x2="730" y2="655"/>
+    <line x1="440" y1="700" x2="730" y2="700"/>
+    <ellipse cx="585" cy="655" rx="145" ry="95"/>
+    <ellipse cx="585" cy="655" rx="145" ry="50"/>
+  </g>
+
+  <!-- Simplified landmasses -->
+  <g fill="#0B2F7A" clip-path="url(#globeClip)">
+    <!-- North America -->
+    <path d="M470 565
+             C455 560,445 575,452 590
+             C460 600,470 602,478 615
+             C488 625,500 622,508 637
+             C516 648,526 642,533 632
+             C540 622,535 610,542 600
+             C548 590,540 575,526 572
+             C510 568,500 555,485 555 Z"/>
+    <!-- South America -->
+    <path d="M520 650
+             C510 655,505 670,512 683
+             C520 696,530 710,532 725
+             C535 744,548 760,556 775
+             C565 760,573 742,570 725
+             C568 710,575 695,565 682
+             C555 668,540 655,520 650 Z"/>
+    <!-- Europe -->
+    <path d="M605 575
+             C620 565,640 570,650 582
+             C658 590,670 586,680 595
+             C685 605,675 612,665 610
+             C655 606,645 610,638 620
+             C630 628,620 625,615 615
+             C610 604,600 590,605 575 Z"/>
+    <!-- Africa -->
+    <path d="M615 625
+             C632 620,650 626,662 640
+             C675 655,675 675,665 690
+             C655 705,650 725,638 742
+             C625 730,620 712,612 695
+             C605 680,595 668,600 650
+             C602 640,607 632,615 625 Z"/>
+    <!-- Asia -->
+    <path d="M660 585
+             C685 565,720 570,735 588
+             C748 602,745 620,735 630
+             C722 643,710 640,700 650
+             C690 660,680 655,674 645
+             C666 632,650 620,652 605
+             C653 598,656 592,660 585 Z"/>
+    <!-- Australia -->
+    <path d="M690 710
+             C705 700,725 705,735 718
+             C740 730,730 742,715 745
+             C700 748,688 738,685 725
+             C683 720,685 715,690 710 Z"/>
+  </g>
+</svg>

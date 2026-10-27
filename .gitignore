@@ -1,0 +1,6 @@
+.DS_Store
+# old working copies; git history replaces them
+index.before-*.html
+index.with-*.html
+index.precision-edit.html
+index.footer-centred-all.html
